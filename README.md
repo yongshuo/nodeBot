@@ -1,10 +1,10 @@
 This example require install nodejs, socket.io
 
 1. Install the nodejs under linux 12.04
-  . check dependencies
-    > sudo apt-get install g++ curl libssl-dev apache2-utils
-    > sudo apt-get install git-core
-  . download and install nodejs
+  1. check dependencies
+    1. sudo apt-get install g++ curl libssl-dev apache2-utils
+    2. sudo apt-get install git-core
+  2. download and install nodejs
     > git clone git://github.com/ry/node.git
     > cd node
     > ./configure
