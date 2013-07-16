@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title>My chatroom example</title>
+		<script type="text/javascript" src="http://localhost:8080/socket.io/socket.io.js"></script>	
+		<script type="text/javascript" src="public/js/mySocket.js"></script>
+		<script type="text/javascript" src="public/js/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="public/plugin/bootstrap/js/bootstrap.js"></script>
+		<link rel="stylesheet" type="text/css" href="public/plugin/bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="public/styles/style.css">
+	</head>
+	<body>
+		<div id="header">
+			<div class="join">
+				<input type="text" placeholder="Type a nickname" class="nickname"></input>
+				<button class="btn btn-success btn-join" onclick="connect();">Join</button>
+			</div>
+		</div>
+		<div id="divider"></div>
+		<div id="body">
+			<div id="content">
+				<div id="chatContext">
+					
+					<textarea readonly="true" id="message">
+										
+					</textarea>
+					<div id="typeBox">
+						<textarea class="messageBox"></textarea>
+						<button onclick="sendMessage();" class="btn btn-large btn-success btn-send">Send</button>
+					</div>
+				</div>
+				<div id="userContext">
+					<table class="table table-condensed userTable">
+						<tr class="info">
+							<td>
+								Online users<span class="online label label-success"></span>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div id="divider"></div>
+		<div id="footer">
+			This is footer
+		</div>
+	</body>
+</html>

@@ -1,0 +1,97 @@
+body{
+	background-color:#efefef;
+}
+
+#divider{
+	background-color:black;
+	margin:0 auto;
+	width:980px;
+	height:5px;
+}
+
+#header{
+	background-color:#fff;
+	min-height:80px;
+	max-width:960px;
+	margin:0 auto;
+}
+
+input.nickname{
+	height:30px;
+}
+
+button.btn-join{
+	margin:-7px 0px 0px 0px;
+}
+
+.join{
+	float:right;
+	min-width:30px;
+	margin:30px 30px 10px 0px;
+}
+
+#body{
+	background-color:#fff;
+	max-width:960px;
+	min-height:560px;
+	margin:0 auto;
+}
+
+#content{
+	padding:10px;
+	
+}
+
+#chatContext{
+	width:75%;
+	float:left;
+	border:1px dotted;
+	border-color:lightgray;
+}
+
+#message{
+	min-height:350px;
+	min-width:100%;
+	background-color:white;
+}
+
+.messageBox{
+	margin:20px 0px 0px 20px;
+	width:80%;
+	height:80px;
+}
+
+.btn-send{
+	margin:20px 0px 0px 0px;
+	height:80px;
+}
+
+#typeBox{
+	min-height:120px;
+	background-color:#59c3e2;
+}
+
+/**user context part*/
+#userContext{
+	border:1px dotted;
+	border-color:lightgray;
+	width:20%;
+	margin-top:0px;
+	height:480px;
+	overflow:scroll;
+	float:left;
+}
+
+#onlineUser{
+	
+}
+
+#footer{
+	background-color:#fff;
+	max-width:960px;
+	min-height:40px;
+	margin:0 auto;
+}
+
+
+
