@@ -1,0 +1,19 @@
+/**
+* class class stored information client's id, nickname, joinDate, and getter,seeters
+**/
+
+var client = function(id,name){
+	this.id = id;
+	this.nickname = name;
+}
+
+client.prototype.getId = function(){
+	return this.id;
+};
+
+client.prototype.getNickName = function(){
+	return this.nickname;
+};
+
+//exports the class
+exports.client = client;
