@@ -70,7 +70,10 @@ function connect(socket,data){
 */
 function messaging(socket,data){	
 	var index = getClient(socket.id);
-	io.of(chatNS).sockets[socket.id].broadcast.emit("message",{client : clients[index].getNickName() , message : data["message"],current:getCurrent()});	
+	if(index != -1)
+		io.of(chatNS).sockets[socket.id].broadcast.emit("message",{client : clients[index].getNickName() , message : data["message"],current:getCurrent()});
+	else
+		socket.emit('error',{admin:siteAdmin,message:'You may be disconnected from server, please close browser join again!'});	
 }
 
 /**
@@ -80,13 +83,17 @@ function disconnect(socket){
 	//get clients index in array
 	var index = getClient(socket.id);
 	
-	//show the disconnected user
-	var msg = clients[index].getNickName() + " left the chatting!";
+	if(index != -1){
+		//show the disconnected user
+		var msg = clients[index].getNickName() + " left the chatting!";
 
-	//broadcast to all user the user disconnected
-	io.of(chatNS).emit("disconnected",{socketId : clients[index].getId(), clientNum:clients.length, admin : siteAdmin, message : msg});
-	//delete from array, free memory
-	clients.splice(index,1);
+		//broadcast to all user the user disconnected
+		io.of(chatNS).emit("disconnected",{socketId : clients[index].getId(), clientNum:clients.length, admin : siteAdmin, message : msg});
+		//delete from array, free memory
+		clients.splice(index,1);
+	}else{
+		socket.emit('error',{admin:siteAdmin,message:'You may be disconnected from server, please close browser join again!'});	
+	}
 }
 
 /*
@@ -97,6 +104,7 @@ function getClient(socketId){
 		if(clients[key].getId() == socketId){
 			return key;
 		}
+	return -1;
 }
 
 function getCurrent(){
