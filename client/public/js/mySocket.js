@@ -10,6 +10,12 @@ window.onload = function(){
 var chat = io.connect("http://localhost:8080/chat");
 var joined = false;
 
+//when error throw from the server to current socket user
+chat.on('error',function(data){
+	var msg = data['admin']+': '+data['message'];
+	appendMsg(msg);
+});
+
 chat.on("message",function(data){
 	var msg = data['client']+' '+data['current']+'\n\t'+data['message'];
 	
@@ -99,4 +105,3 @@ function getCurrent(){
 	
 	return time.getDate()+'/'+(time.getMonth()+1)+'/'+time.getFullYear()+' '+time.getHours()+':'+time.getMinutes()+':'+time.getSeconds();
 }
-
