@@ -1,3 +1,4 @@
+test
 This example require install nodejs, socket.io
 
 1. Install the nodejs under linux 12.04
